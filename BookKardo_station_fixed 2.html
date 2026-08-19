@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BookKardo - Connecting All Routes</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
+body {
+background-color: #0b1c3c;
+color: #333;
+min-height: 100vh;
+}
+/* Top Navigation */
+header {
+background-color: #0b1c3c;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 15px 40px;
+border-bottom: 1px solid rgba(255,255,255,0.1);
+flex-wrap: wrap;
+gap: 15px;
+position: relative;
+z-index: 10;
+pointer-events: none; /* Lets clicks pass right through empty header space */
+}
+input, select {
+pointer-events: auto !important;
+position: relative;
+z-index: 9999;
+}
+
+.card, .form-container, form {
+position: relative;
+z-index: 10000;
+pointer-events: auto !important;
+}
+
+/* Keeps your actual header logo/links clickable */
+header * {
+pointer-events: auto;
+}
+
+.logo { color: #fff; font-size: 22px; font-weight: bold; display: flex; align-items: center; gap: 8px; }
+.logo span { color: #ff6600; font-size: 13px; font-weight: normal; }
+.nav-links { display: flex; gap: 20px; color: #fff; align-items: center; flex-wrap: wrap; }
+.nav-item { display: flex; align-items: center; gap: 6px; cursor: pointer; color: #fff; text-decoration: none; font-size: 14px; }
+.nav-item.active { color: #ff6600; font-weight: bold; }
+.support-btn {
+background-color: #ff6600;
+color: white;
+padding: 8px 16px;
+border-radius: 8px;
+text-decoration: none;
+font-weight: bold;
+display: flex;
+flex-direction: column;
+align-items: flex-end;
+font-size: 11px;
+}
+.support-btn span { font-size: 15px; }
+
+/* Hero Section */
+.hero {
+position: relative;
+background: url('vande-bharat.jpg') no-repeat center center;
+background-size: cover;
+padding: 50px 40px 140px 40px;
+color: white;
+}
+.hero::before {
+content: '';
+position: absolute;
+top:0; left:0; width:100%; height:100%;
+background: rgba(11,28,60,0.75);
+}
+.hero-content {
+position: relative;
+max-width: 650px;
+z-index: 2;
+}
+.badge {
+background: rgba(11, 28, 60, 0.9);
+border: 1px solid #3b82f6;
+padding: 5px 12px;
+border-radius: 20px;
+font-size: 11px;
+font-weight: bold;
+display: inline-block;
+margin-bottom: 12px;
+color: #60a5fa;
+}
+.hero h1 { font-size: 36px; line-height: 1.2; margin-bottom: 8px; font-weight: 800; }
+.hero h1 span { color: #ff6600; }
+.hero p { font-size: 13px; color: #e2e8f0; }
+
+/* Form Container Overlap */
+.container-wrapper {
+max-width: 1100px;
+margin: -70px auto 40px auto;
+padding: 0 20px;
+position: relative;
+z-index: 10;
+}
+.booking-card {
+background: #ffffff;
+border-radius: 14px;
+padding: 25px;
+box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+.card-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 20px;
+border-bottom: 1px solid #eee;
+padding-bottom: 12px;
+}
+.card-title { font-size: 17px; font-weight: bold; color: #111; display: flex; align-items: center; gap: 8px; }
+.card-title span { color: #ff6600; }
+.whatsapp-tag {
+background: #e6f4ea;
+color: #137333;
+padding: 5px 10px;
+border-radius: 20px;
+font-size: 12px;
+font-weight: bold;
+}
+
+/* Form Main Grid */
+/* Form Main Grid for Desktop (All 5 fields side-by-side) */
+.form-row {
+display: grid;
+grid-template-columns: 1.5fr auto 1.5fr 1fr 1fr;
+gap: 10px;
+align-items: center;
+margin-bottom: 15px;
+}
+
+/* Automatic stack for Mobile screens */
+@media (max-width: 768px) {
+.form-row {
+grid-template-columns: 1fr;
+gap: 12px;
+}
+.swap-btn {
+margin: 5px auto;
+}
+}
+
+.input-group {
+border: 1px solid #cbd5e1;
+border-radius: 8px;
+padding: 8px 12px;
+background: #fff;
+}
+.input-group label { display: block; font-size: 11px; color: #475569; font-weight: bold; margin-bottom: 3px; }
+.input-group input, .input-group select {
+width: 100%; border: none; outline: none; font-size: 13px; font-weight: bold; color: #1e293b; background: transparent;
+}
+.swap-btn {
+background: #f1f5f9;
+border: 1px solid #cbd5e1;
+border-radius: 50%;
+width: 36px; height: 36px;
+display: flex; align-items: center; justify-content: center;
+cursor: pointer;
+margin: 0 auto;
+font-weight: bold;
+color: #475569;
+}
+
+/* Passengers Grid (6 Passengers) */
+.section-sub { font-size: 13px; font-weight: bold; color: #1e293b; margin: 15px 0 10px 0; border-top: 1px solid #f1f5f9; padding-top: 15px; }
+.passengers-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 10px;
+margin-bottom: 15px;
+}
+.passenger-box {
+background: #f8fafc;
+border: 1px solid #e2e8f0;
+border-radius: 8px;
+padding: 10px;
+}
+.passenger-title { font-size: 11px; font-weight: bold; color: #ff6600; margin-bottom: 6px; }
+.passenger-inputs { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 6px; }
+.passenger-inputs input, .passenger-inputs select {
+border: 1px solid #cbd5e1; border-radius: 5px; padding: 5px; font-size: 11px; width: 100%; outline: none; background: #fff;
+}
+
+/* Bottom Settings Row */
+.bottom-row {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 12px;
+margin-bottom: 20px;
+}
+
+/* Submit Button */
+.submit-btn {
+width: 100%;
+background: linear-gradient(90deg, #ff512f, #f09819);
+color: white;
+border: none;
+padding: 14px;
+border-radius: 8px;
+font-size: 15px;
+font-weight: bold;
+cursor: pointer;
+text-align: center;
+box-shadow: 0 4px 12px rgba(255, 81, 47, 0.3);
+}
+.submit-btn:hover { opacity: 0.95; }
+
+/* Footer */
+footer {
+text-align: center;
+padding: 20px;
+color: #94a3b8;
+font-size: 12px;
+}
+
+@media(max-width: 900px) {
+.form-row, .passengers-grid, .bottom-row { grid-template-columns: 1fr; }
+}
+
+
+/* ===== Booking fields: fixed overlap/click-blocking ===== */
+.form-row.station-row {
+  display: grid;
+  grid-template-columns: minmax(190px, 1.5fr) 42px minmax(190px, 1.5fr) minmax(150px, 1fr) minmax(150px, 1fr);
+  gap: 10px;
+  align-items: stretch;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.form-row .input-group {
+  min-width: 0;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.form-row .input-group label {
+  position: relative;
+  z-index: 2;
+  display: block;
+}
+
+.form-row .input-group input,
+.form-row .input-group select {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  position: relative;
+  z-index: 3;
+  pointer-events: auto;
+  cursor: text;
+}
+
+.form-row .input-group select {
+  cursor: pointer;
+}
+
+.form-row .station-field input {
+  height: 32px;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.swap-btn {
+  align-self: center;
+  justify-self: center;
+  position: relative;
+  z-index: 5;
+  width: 42px;
+  height: 42px;
+  flex: none;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+@media (max-width: 1100px) {
+  .form-row.station-row {
+    grid-template-columns: minmax(170px, 1fr) 42px minmax(170px, 1fr);
+  }
+
+  .form-row.station-row > .input-group:nth-of-type(3) {
+    grid-column: 1 / 2;
+  }
+
+  .form-row.station-row > .input-group:nth-of-type(4) {
+    grid-column: 2 / 4;
+  }
+}
+
+@media (max-width: 700px) {
+  .container-wrapper {
+    padding: 0 10px;
+  }
+
+  .booking-card {
+    padding: 16px;
+  }
+
+  .form-row.station-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .form-row.station-row > .input-group,
+  .form-row.station-row > .input-group:nth-of-type(3),
+  .form-row.station-row > .input-group:nth-of-type(4) {
+    grid-column: auto;
+  }
+
+  .swap-btn {
+    transform: rotate(90deg);
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 900px) {
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .swap-btn {
+    margin: 0 auto;
+    transform: rotate(90deg);
+  }
+
+  .booking-card {
+    padding: 18px;
+  }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+<div class="logo">🚆 BOOKKARDO <span>Connecting All Routes</span></div>
+<div class="nav-links">
+<a href="#" class="nav-item active">🏠 Home</a>
+<a href="#" class="nav-item">🔍 Search Trains</a>
+<a href="#" class="nav-item">📅 My Bookings</a>
+<a href="#" class="nav-item">📞 Contact Us</a>
+</div>
+<a href="https://wa.me/919906942182" class="support-btn">
+Help & Support
+<span>9906942182</span>
+</a>
+</header>
+
+<div class="hero">
+<div class="hero-content">
+<div class="badge">⚡ FAST • SECURE • RELIABLE</div>
+<h1>Book Your <span>Train Journey</span> Instantly</h1>
+<p>Easy Booking • Confirmed Journey • Happy Travel</p>
+</div>
+</div>
+
+<div class="container-wrapper">
+<div class="booking-card">
+<div class="card-header">
+<div class="card-title">🚆 <span>BOOK TICKET</span></div>
+<div class="whatsapp-tag">🟢 WhatsApp Booking Enabled</div>
+</div>
+
+<form id="whatsappBookingForm">
+<div class="form-row station-row">
+  <div class="input-group station-field">
+    <label for="fromStation">From Station</label>
+    <input type="text" id="fromStation" name="fromStation"
+           list="stationList" autocomplete="off"
+           placeholder="e.g. New Delhi" required>
+  </div>
+
+  <button type="button" class="swap-btn" id="swapStations"
+          aria-label="Swap stations">⇄</button>
+
+  <div class="input-group station-field">
+    <label for="toStation">To Station</label>
+    <input type="text" id="toStation" name="toStation"
+           list="stationList" autocomplete="off"
+           placeholder="e.g. Jammu Tawi" required>
+  </div>
+
+  <div class="input-group">
+    <label for="journeyDate">Journey Date</label>
+    <input type="date" id="journeyDate" name="journeyDate" required>
+  </div>
+
+  <div class="input-group">
+    <label for="travelClass">Travel Class</label>
+    <select id="travelClass" name="travelClass">
+      <option>All Classes</option>
+      <option>AC 1st Class (1A)</option>
+      <option>AC 2 Tier (2A)</option>
+      <option>AC 3 Tier (3A)</option>
+      <option>Sleeper (SL)</option>
+      <option>Second Seating (2S)</option>
+    </select>
+  </div>
+</div>
+<datalist id="stationList">
+<option value="Jammu Tawi (JAT)">
+<option value="New Delhi (NDLS)">
+<option value="Shri Mata Vaishno Devi Katra (SVDK)">
+<option value="Mumbai Central (MMCT)">
+<option value="Amritsar Junction (ASR)">
+<option value="Howrah Junction (HWH)">
+<option value="Chandigarh (CDG)">
+</datalist>
+<div class="section-sub">👤 PASSENGER DETAILS (Up to 6 Passengers)</div>
+<div class="passengers-grid">
+<!-- P1 -->
+<div class="passenger-box">
+<div class="passenger-title">Passenger 1</div>
+<div class="passenger-inputs">
+<input type="text" id="p1Name" placeholder="Name">
+<input type="number" id="p1Age" placeholder="Age">
+<select id="p1Gender"><option value="">Sex</option><option>Male</option><option>Female</option></select>
+</div>
+</div>
+<!-- P2 -->
+<div class="passenger-box">
+<div class="passenger-title">Passenger 2</div>
+<div class="passenger-inputs">
+<input type="text" id="p2Name" placeholder="Name">
+<input type="number" id="p2Age" placeholder="Age">
+<select id="p2Gender"><option value="">Sex</option><option>Male</option><option>Female</option></select>
+</div>
+</div>
+<!-- P3 -->
+<div class="passenger-box">
+<div class="passenger-title">Passenger 3</div>
+<div class="passenger-inputs">
+<input type="text" id="p3Name" placeholder="Name">
+<input type="number" id="p3Age" placeholder="Age">
+<select id="p3Gender"><option value="">Sex</option><option>Male</option><option>Female</option></select>
+</div>
+</div>
+<!-- P4 -->
+<div class="passenger-box">
+<div class="passenger-title">Passenger 4</div>
+<div class="passenger-inputs">
+<input type="text" id="p4Name" placeholder="Name">
+<input type="number" id="p4Age" placeholder="Age">
+<select id="p4Gender"><option value="">Sex</option><option>Male</option><option>Female</option></select>
+</div>
+</div>
+<!-- P5 -->
+<div class="passenger-box">
+<div class="passenger-title">Passenger 5</div>
+<div class="passenger-inputs">
+<input type="text" id="p5Name" placeholder="Name">
+<input type="number" id="p5Age" placeholder="Age">
+<select id="p5Gender"><option value="">Sex</option><option>Male</option><option>Female</option></select>
+</div>
+</div>
+<!-- P6 -->
+<div class="passenger-box">
+<div class="passenger-title">Passenger 6</div>
+<div class="passenger-inputs">
+<input type="text" id="p6Name" placeholder="Name">
+<input type="number" id="p6Age" placeholder="Age">
+<select id="p6Gender"><option value="">Sex</option><option>Male</option><option>Female</option></select>
+</div>
+</div>
+</div>
+
+<div class="bottom-row">
+<div class="input-group">
+<label>Quota Type</label>
+<select id="quotaType">
+<option>GENERAL</option>
+<option>TATKAL</option>
+<option>PREMIUM TATKAL</option>
+<option>LADIES</option>
+<option>SENIOR CITIZEN</option>
+</select>
+</div>
+<div class="input-group">
+<label>Train Number & Name (Optional)</label>
+<input type="text" id="trainDetails" placeholder="e.g. 22439 Vande Bharat Express">
+</div>
+</div>
+
+<button type="submit" class="submit-btn">🟢 Send Booking Request via WhatsApp</button>
+</form>
+</div>
+</div>
+
+<footer>
+© 2026 Bookkardo. All Rights Reserved.
+</footer>
+
+<script>
+document.getElementById('whatsappBookingForm').addEventListener('submit', function(e) {
+e.preventDefault();
+
+const from = document.getElementById('fromStation').value;
+const to = document.getElementById('toStation').value;
+const date = document.getElementById('journeyDate').value;
+const tClass = document.getElementById('travelClass').value;
+const quota = document.getElementById('quotaType').value;
+const train = document.getElementById('trainDetails').value;
+let message = `New Booking Request - Bookkardo
+From: ${document.getElementById('fromStation').value}
+To: ${document.getElementById('toStation').value}
+Date: ${document.getElementById('journeyDate').value}
+Class: ${document.getElementById('travelClass').value}
+Quota: ${document.getElementById('quotaType').value}`;
+
+if(train) {
+message += `\nTrain: ${train}`;
+}
+
+for (let i = 1; i <= 6; i++) {
+const name = document.getElementById(`p${i}Name`).value;
+const age = document.getElementById(`p${i}Age`).value;
+const gender = document.getElementById(`p${i}Gender`).value;
+if (name) {
+message += `\n\nPassenger: ${name}\nAge: ${age || 'N/A'} | Gender: ${gender || 'N/A'}`;
+}
+}
+
+
+const phoneNumber = "919906942182";
+window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
+});
+
+const dateInput = document.getElementById('journeyDate');
+if (dateInput) {
+  const today = new Date().toISOString().split('T')[0];
+  dateInput.min = today;
+}
+
+
+const swapButton = document.getElementById('swapStations');
+const fromStation = document.getElementById('fromStation');
+const toStation = document.getElementById('toStation');
+
+if (swapButton) {
+  swapButton.addEventListener('click', function () {
+    const temp = fromStation.value;
+    fromStation.value = toStation.value;
+    toStation.value = temp;
+    fromStation.focus();
+  });
+}
+
+</script>
+
+</body>
+</html>
