@@ -25,7 +25,11 @@ position: relative;
 z-index: 10;
 pointer-events: none; /* Lets clicks pass right through empty header space */
 }
-
+input, select {
+pointer-events: auto !important;
+position: relative;
+z-index: 9999;
+}
 /* Keeps your actual header logo/links clickable */
 header * {
 pointer-events: auto;
