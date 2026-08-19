@@ -229,13 +229,13 @@ Help & Support
 <form id="whatsappBookingForm">
 <div class="form-row">
 <div class="input-group">
-<label>From Station</label>
-<input type="text" id="fromStation" placeholder="e.g. New Delhi" required>
+<label>From Station</label
+<input type="text" id="fromStation" list="stationList" placeholder="e.g. New Delhi" required>
 </div>
 <div class="swap-btn">⇄</div>
 <div class="input-group">
 <label>To Station</label>
-<input type="text" id="toStation" placeholder="e.g. Jammu Tawi" required>
+<input type="text" id="toStation" list="stationList" placeholder="e.g. Jammu Tawi" required>
 </div>
 <div class="input-group">
 <label>Journey Date</label>
@@ -253,7 +253,15 @@ Help & Support
 </select>
 </div>
 </div>
-
+<datalist id="stationList">
+<option value="Jammu Tawi (JAT)">
+<option value="New Delhi (NDLS)">
+<option value="Shri Mata Vaishno Devi Katra (SVDK)">
+<option value="Mumbai Central (MMCT)">
+<option value="Amritsar Junction (ASR)">
+<option value="Howrah Junction (HWH)">
+<option value="Chandigarh (CDG)">
+</datalist>
 <div class="section-sub">👤 PASSENGER DETAILS (Up to 6 Passengers)</div>
 <div class="passengers-grid">
 <!-- P1 -->
