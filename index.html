@@ -348,15 +348,15 @@ const date = document.getElementById('journeyDate').value;
 const tClass = document.getElementById('travelClass').value;
 const quota = document.getElementById('quotaType').value;
 const train = document.getElementById('trainDetails').value;
+let message = `New Booking Request - Bookkardo
+From: ${document.getElementById('fromStation').value}
+To: ${document.getElementById('toStation').value}
+Date: ${document.getElementById('journeyDate').value}
+Class: ${document.getElementById('travelClass').value}
+Quota: ${document.getElementById('quotaType').value}`;
 
-let message = 'New Booking Request - Bookkardo%0A';
-message += `From: ${document.getElementById('fromStation').value}%0A`;
-message += `To: ${document.getElementById('toStation').value}%0A`;
-message += `Date: ${document.getElementById('journeyDate').value}%0A`;
-message += `Class: ${document.getElementById('travelClass').value}%0A`;
-message += `Quota: ${document.getElementById('quotaType').value}%0A`;
 if(train) {
-message += `Train: ${train}%0A`;
+message += `\nTrain: ${train}`;
 }
 
 for (let i = 1; i <= 6; i++) {
@@ -364,10 +364,10 @@ const name = document.getElementById(`p${i}Name`).value;
 const age = document.getElementById(`p${i}Age`).value;
 const gender = document.getElementById(`p${i}Gender`).value;
 if (name) {
-message += `%0APassenger: ${name}%0A`;
-message += `Age: ${age || 'N/A'} | Gender: ${gender || 'N/A'}%0A`;
+message += `\n\nPassenger: ${name}\Age: ${age || 'N/A'} | Gender: ${gender || 'N/A'}`;
 }
 }
+
 
 const phoneNumber = "919906942182";
 window.open(`https://wa.me/919906942182?text=${encodeURIComponent(message)}`, '_blank');
