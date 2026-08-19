@@ -21,7 +21,16 @@ padding: 15px 40px;
 border-bottom: 1px solid rgba(255,255,255,0.1);
 flex-wrap: wrap;
 gap: 15px;
+position: relative;
+z-index: 10;
+pointer-events: none; /* Lets clicks pass right through empty header space */
 }
+
+/* Keeps your actual header logo/links clickable */
+header * {
+pointer-events: auto;
+}
+
 .logo { color: #fff; font-size: 22px; font-weight: bold; display: flex; align-items: center; gap: 8px; }
 .logo span { color: #ff6600; font-size: 13px; font-weight: normal; }
 .nav-links { display: flex; gap: 20px; color: #fff; align-items: center; flex-wrap: wrap; }
