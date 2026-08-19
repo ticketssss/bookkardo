@@ -19,139 +19,151 @@ justify-content: space-between;
 align-items: center;
 padding: 15px 40px;
 border-bottom: 1px solid rgba(255,255,255,0.1);
+flex-wrap: wrap;
+gap: 15px;
 }
-.logo { color: #fff; font-size: 24px; font-weight: bold; display: flex; align-items: center; gap: 10px; }
-.logo span { color: #ff6600; }
-.nav-links { display: flex; gap: 30px; color: #fff; align-items: center; }
-.nav-item { display: flex; align-items: center; gap: 8px; cursor: pointer; color: #fff; text-decoration: none; font-size: 14px; }
+.logo { color: #fff; font-size: 22px; font-weight: bold; display: flex; align-items: center; gap: 8px; }
+.logo span { color: #ff6600; font-size: 13px; font-weight: normal; }
+.nav-links { display: flex; gap: 20px; color: #fff; align-items: center; flex-wrap: wrap; }
+.nav-item { display: flex; align-items: center; gap: 6px; cursor: pointer; color: #fff; text-decoration: none; font-size: 14px; }
 .nav-item.active { color: #ff6600; font-weight: bold; }
 .support-btn {
 background-color: #ff6600;
 color: white;
-padding: 10px 20px;
+padding: 8px 16px;
 border-radius: 8px;
 text-decoration: none;
 font-weight: bold;
 display: flex;
 flex-direction: column;
 align-items: flex-end;
-font-size: 12px;
+font-size: 11px;
 }
-.support-btn span { font-size: 16px; }
+.support-btn span { font-size: 15px; }
 
-/* Hero Background with Train */
+/* Hero Section */
 .hero {
 position: relative;
 background: url('vande-bharat.jpg') no-repeat center center;
 background-size: cover;
-padding: 40px 40px 180px 40px;
+padding: 50px 40px 140px 40px;
 color: white;
 }
 .hero::before {
 content: '';
 position: absolute;
 top:0; left:0; width:100%; height:100%;
-background: linear-gradient(90deg, rgba(11,28,60,0.85) 0%, rgba(11,28,60,0.4) 100%);
+background: rgba(11,28,60,0.75);
 }
 .hero-content {
 position: relative;
-max-width: 600px;
+max-width: 650px;
 z-index: 2;
 }
 .badge {
 background: rgba(11, 28, 60, 0.9);
 border: 1px solid #3b82f6;
-padding: 6px 14px;
+padding: 5px 12px;
 border-radius: 20px;
-font-size: 12px;
+font-size: 11px;
 font-weight: bold;
 display: inline-block;
-margin-bottom: 15px;
+margin-bottom: 12px;
 color: #60a5fa;
 }
-.hero h1 { font-size: 42px; line-height: 1.2; margin-bottom: 15px; font-weight: 800; }
+.hero h1 { font-size: 36px; line-height: 1.2; margin-bottom: 8px; font-weight: 800; }
 .hero h1 span { color: #ff6600; }
-.hero p { font-size: 14px; margin-bottom: 25px; color: #e2e8f0; }
+.hero p { font-size: 13px; color: #e2e8f0; }
 
-/* Form Container */
+/* Form Container Overlap */
 .container-wrapper {
-max-width: 1200px;
-margin: -130px auto 40px auto;
+max-width: 1100px;
+margin: -70px auto 40px auto;
 padding: 0 20px;
 position: relative;
 z-index: 10;
 }
 .booking-card {
 background: #ffffff;
-border-radius: 16px;
-padding: 30px;
-box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+border-radius: 14px;
+padding: 25px;
+box-shadow: 0 10px 25px rgba(0,0,0,0.25);
 }
 .card-header {
 display: flex;
 justify-content: space-between;
 align-items: center;
-margin-bottom: 25px;
+margin-bottom: 20px;
 border-bottom: 1px solid #eee;
-padding-bottom: 15px;
+padding-bottom: 12px;
 }
-.card-title { font-size: 20px; font-weight: bold; color: #111; display: flex; align-items: center; gap: 8px; }
+.card-title { font-size: 17px; font-weight: bold; color: #111; display: flex; align-items: center; gap: 8px; }
 .card-title span { color: #ff6600; }
 .whatsapp-tag {
 background: #e6f4ea;
 color: #137333;
-padding: 6px 12px;
+padding: 5px 10px;
 border-radius: 20px;
-font-size: 13px;
+font-size: 12px;
 font-weight: bold;
 }
 
-/* Form Grid */
+/* Form Main Grid */
 .form-row {
 display: grid;
-grid-template-columns: 2fr 0.3fr 2fr 1.5fr 1.5fr;
-gap: 15px;
+grid-template-columns: 2fr 0.4fr 2fr 1.5fr 1.5fr;
+gap: 12px;
 align-items: center;
-margin-bottom: 20px;
+margin-bottom: 18px;
 }
 .input-group {
-border: 1px solid #ddd;
+border: 1px solid #cbd5e1;
 border-radius: 8px;
-padding: 10px 14px;
+padding: 8px 12px;
 background: #fff;
 }
-.input-group label { display: block; font-size: 11px; color: #666; font-weight: bold; margin-bottom: 4px; }
+.input-group label { display: block; font-size: 11px; color: #475569; font-weight: bold; margin-bottom: 3px; }
 .input-group input, .input-group select {
-width: 100%; border: none; outline: none; font-size: 14px; font-weight: bold; color: #333; background: transparent;
+width: 100%; border: none; outline: none; font-size: 13px; font-weight: bold; color: #1e293b; background: transparent;
 }
 .swap-btn {
-background: #f8fafc;
-border: 1px solid #ddd;
+background: #f1f5f9;
+border: 1px solid #cbd5e1;
 border-radius: 50%;
-width: 40px; height: 40px;
+width: 36px; height: 36px;
 display: flex; align-items: center; justify-content: center;
 cursor: pointer;
 margin: 0 auto;
+font-weight: bold;
+color: #475569;
 }
 
-/* Passenger Grid */
-.section-sub { font-size: 14px; font-weight: bold; color: #333; margin: 20px 0 10px 0; }
+/* Passengers Grid (6 Passengers) */
+.section-sub { font-size: 13px; font-weight: bold; color: #1e293b; margin: 15px 0 10px 0; border-top: 1px solid #f1f5f9; padding-top: 15px; }
 .passengers-grid {
 display: grid;
 grid-template-columns: repeat(3, 1fr);
-gap: 15px;
-margin-bottom: 20px;
+gap: 10px;
+margin-bottom: 15px;
 }
 .passenger-box {
-background: #f9fafb;
-border: 1px solid #e5e7eb;
-border-radius: 10px;
-padding: 12px;
+background: #f8fafc;
+border: 1px solid #e2e8f0;
+border-radius: 8px;
+padding: 10px;
 }
-.passenger-title { font-size: 12px; font-weight: bold; color: #ff6600; margin-bottom: 8px; }
-.passenger-inputs { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 8px; }
+.passenger-title { font-size: 11px; font-weight: bold; color: #ff6600; margin-bottom: 6px; }
+.passenger-inputs { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 6px; }
 .passenger-inputs input, .passenger-inputs select {
-border: 1px solid #ddd; border-radius: 6px; padding: 6px 8px; font-size: 12px; width: 100%; outline: none;
+border: 1px solid #cbd5e1; border-radius: 5px; padding: 5px; font-size: 11px; width: 100%; outline: none; background: #fff;
+}
+
+/* Bottom Settings Row */
+.bottom-row {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 12px;
+margin-bottom: 20px;
 }
 
 /* Submit Button */
@@ -160,14 +172,13 @@ width: 100%;
 background: linear-gradient(90deg, #ff512f, #f09819);
 color: white;
 border: none;
-padding: 16px;
-border-radius: 10px;
-font-size: 16px;
+padding: 14px;
+border-radius: 8px;
+font-size: 15px;
 font-weight: bold;
 cursor: pointer;
 text-align: center;
-box-shadow: 0 4px 12px rgba(255, 81, 47, 0.4);
-margin-top: 10px;
+box-shadow: 0 4px 12px rgba(255, 81, 47, 0.3);
 }
 .submit-btn:hover { opacity: 0.95; }
 
@@ -176,8 +187,11 @@ footer {
 text-align: center;
 padding: 20px;
 color: #94a3b8;
-font-size: 13px;
-border-top: 1px solid rgba(255,255,255,0.05);
+font-size: 12px;
+}
+
+@media(max-width: 900px) {
+.form-row, .passengers-grid, .bottom-row { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -191,9 +205,9 @@ border-top: 1px solid rgba(255,255,255,0.05);
 <a href="#" class="nav-item">📅 My Bookings</a>
 <a href="#" class="nav-item">📞 Contact Us</a>
 </div>
-<a href="https://wa.me/919906942182" class="support-btn">
+<a href="https://wa.me/9906942182" class="support-btn">
 Help & Support
-<span>919906942182</span>
+<span>9906942182</span>
 </a>
 </header>
 
@@ -209,7 +223,7 @@ Help & Support
 <div class="booking-card">
 <div class="card-header">
 <div class="card-title">🚆 <span>BOOK TICKET</span></div>
-<div class="whatsapp-tag">🟢 WhatsApp Booking</div>
+<div class="whatsapp-tag">🟢 WhatsApp Booking Enabled</div>
 </div>
 
 <form id="whatsappBookingForm">
@@ -235,35 +249,83 @@ Help & Support
 <option>AC 2 Tier (2A)</option>
 <option>AC 3 Tier (3A)</option>
 <option>Sleeper (SL)</option>
+<option>Second Seating (2S)</option>
 </select>
 </div>
 </div>
 
-<div class="section-sub">👤 PASSENGER DETAILS (Up to 3 Passengers)</div>
+<div class="section-sub">👤 PASSENGER DETAILS (Up to 6 Passengers)</div>
 <div class="passengers-grid">
+<!-- P1 -->
 <div class="passenger-box">
 <div class="passenger-title">Passenger 1</div>
 <div class="passenger-inputs">
 <input type="text" id="p1Name" placeholder="Name">
 <input type="number" id="p1Age" placeholder="Age">
-<select id="p1Gender"><option>Gender</option><option>Male</option><option>Female</option></select>
+<select id="p1Gender"><option value="">Sex</option><option>Male</option><option>Female</option></select>
 </div>
 </div>
+<!-- P2 -->
 <div class="passenger-box">
 <div class="passenger-title">Passenger 2</div>
 <div class="passenger-inputs">
 <input type="text" id="p2Name" placeholder="Name">
 <input type="number" id="p2Age" placeholder="Age">
-<select id="p2Gender"><option>Gender</option><option>Male</option><option>Female</option></select>
+<select id="p2Gender"><option value="">Sex</option><option>Male</option><option>Female</option></select>
 </div>
 </div>
+<!-- P3 -->
 <div class="passenger-box">
 <div class="passenger-title">Passenger 3</div>
 <div class="passenger-inputs">
 <input type="text" id="p3Name" placeholder="Name">
 <input type="number" id="p3Age" placeholder="Age">
-<select id="p3Gender"><option>Gender</option><option>Male</option><option>Female</option></select>
+<select id="p3Gender"><option value="">Sex</option><option>Male</option><option>Female</option></select>
 </div>
+</div>
+<!-- P4 -->
+<div class="passenger-box">
+<div class="passenger-title">Passenger 4</div>
+<div class="passenger-inputs">
+<input type="text" id="p4Name" placeholder="Name">
+<input type="number" id="p4Age" placeholder="Age">
+<select id="p4Gender"><option value="">Sex</option><option>Male</option><option>Female</option></select>
+</div>
+</div>
+<!-- P5 -->
+<div class="passenger-box">
+<div class="passenger-title">Passenger 5</div>
+<div class="passenger-inputs">
+<input type="text" id="p5Name" placeholder="Name">
+<input type="number" id="p5Age" placeholder="Age">
+<select id="p5Gender"><option value="">Sex</option><option>Male</option><option>Female</option></select>
+</div>
+</div>
+<!-- P6 -->
+<div class="passenger-box">
+<div class="passenger-title">Passenger 6</div>
+<div class="passenger-inputs">
+<input type="text" id="p6Name" placeholder="Name">
+<input type="number" id="p6Age" placeholder="Age">
+<select id="p6Gender"><option value="">Sex</option><option>Male</option><option>Female</option></select>
+</div>
+</div>
+</div>
+
+<div class="bottom-row">
+<div class="input-group">
+<label>Quota Type</label>
+<select id="quotaType">
+<option>GENERAL</option>
+<option>TATKAL</option>
+<option>PREMIUM TATKAL</option>
+<option>LADIES</option>
+<option>SENIOR CITIZEN</option>
+</select>
+</div>
+<div class="input-group">
+<label>Train Number & Name (Optional)</label>
+<input type="text" id="trainDetails" placeholder="e.g. 22439 Vande Bharat Express">
 </div>
 </div>
 
@@ -284,19 +346,28 @@ const from = document.getElementById('fromStation').value;
 const to = document.getElementById('toStation').value;
 const date = document.getElementById('journeyDate').value;
 const tClass = document.getElementById('travelClass').value;
+const quota = document.getElementById('quotaType').value;
+const train = document.getElementById('trainDetails').value;
 
-const p1 = document.getElementById('p1Name').value;
-const p2 = document.getElementById('p2Name').value;
-
-let message = `*New Train Booking Request*%0A`;
+let message = `*🚆 New Booking Request*%0A`;
 message += `📍 From: ${from}%0A`;
 message += `🎯 To: ${to}%0A`;
 message += `📅 Date: ${date}%0A`;
 message += `💺 Class: ${tClass}%0A`;
-if(p1) message += `👤 Passenger 1: ${p1}%0A`;
-if(p2) message += `👤 Passenger 2: ${p2}%0A`;
+message += `🏷️ Quota: ${quota}%0A`;
+if(train) message += `🚂 Train: ${train}%0A`;
+message += `%0A*--- Passenger Details ---*%0A`;
 
-const phoneNumber = "919906942182";
+for (let i = 1; i <= 6; i++) {
+const name = document.getElementById(`p${i}Name`).value;
+const age = document.getElementById(`p${i}Age`).value;
+const gender = document.getElementById(`p${i}Gender`).value;
+if (name) {
+message += `👤 P${i}: ${name} (${age || 'N/A'} yrs, ${gender || 'N/A'})%0A`;
+}
+}
+
+const phoneNumber = "9906942182";
 window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
 });
 </script>
