@@ -368,7 +368,7 @@ message += `👤 P${i}: ${name} (${age || 'N/A'} yrs, ${gender || 'N/A'})%0A`;
 }
 
 const phoneNumber = "919906942182";
-window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+window.open(`https://wa.me/919906942182?text=${encodeURIComponent(message)}`, '_blank');
 });
 </script>
 
