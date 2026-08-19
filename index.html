@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BOOKKARDO - Connecting All Routes</title>
+<style>
+body {
+background-color: #0b1120;
+color: #ffffff;
+margin: 0;
+font-family: Arial, sans-serif;
+}
+header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 20px 4%;
+background: #0b1120;
+}
+.hero-section {
+background: linear-gradient(90deg, #0b1120 40%, rgba(11, 17, 32, 0.2) 80%), 
+url('vande-bharat.jpg');
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+min-height: 500px;
+padding: 40px 4%;
+box-sizing: border-box;
+}
+.booking-card {
+background-color: #ffffff;
+color: #333333; 
+border-radius: 16px;
+padding: 30px;
+box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+max-width: 1300px;
+margin: -70px auto 40px auto;
+position: relative;
+z-index: 10;
+box-sizing: border-box;
+}
+.form-grid {
+display: grid;
+grid-template-columns: 1fr 40px 1fr 1fr 1fr;
+gap: 12px;
+align-items: center;
+margin-bottom: 20px;
+}
+.passenger-grid {
+display: grid;
+grid-template-columns: repeat(6, 1fr);
+gap: 10px;
+margin-bottom: 20px;
+}
+.form-group label {
+display: block;
+font-size: 11px;
+color: #666;
+margin-bottom: 4px;
+font-weight: bold;
+}
+.input-box {
+display: flex;
+align-items: center;
+border: 1px solid #ddd;
+border-radius: 6px;
+padding: 8px 10px;
+background: #fff;
+}
+.input-box input, .input-box select {
+border: none;
+outline: none;
+width: 100%;
+font-size: 13px;
+background: transparent;
+}
+.swap-btn {
+background: #f8f9fa;
+border: 1px solid #ddd;
+border-radius: 50%;
+width: 36px;
+height: 36px;
+display: flex;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+margin-top: 16px;
+}
+.submit-btn {
+background: #ff6600;
+color: white;
+border: none;
+padding: 15px;
+font-size: 16px;
+font-weight: bold;
+border-radius: 8px;
+cursor: pointer;
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 8px;
+}
+footer {
+text-align: center;
+padding: 25px;
+color: #888888;
+font-size: 13px;
+}
+.social-icons {
+display: flex;
+justify-content: center;
+gap: 15px;
+margin-top: 10px;
+}
+.social-icon {
+width: 28px;
+height: 28px;
+color: white;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 12px;
+font-weight: bold;
+text-decoration: none;
+}
+</style>
+</head>
+<body>
+
+<header>
+<div style="display: flex; align-items: center; gap: 10px;">
+<span style="background: #ff6600; padding: 8px; border-radius: 8px; font-size: 18px;"></span>
+<div><strong style="font-size: 18px; letter-spacing: 0.5px;">BOOKKARDO</strong><br><small style="color: #ff6600; font-size: 10px; letter-spacing: 1px;">Connecting All Routes</small></div>
+</div>
+<nav>
+<a href="#" style="color: #ff6600; margin-right: 25px; text-decoration: none; font-weight: bold;">⌂ Home</a>
+<a href="#booking" style="color: #fff; margin-right: 25px; text-decoration: none;">Search Trains</a>
+<a href="#booking" style="color: #fff; margin-right: 25px; text-decoration: none;">My Bookings</a>
+<a href="#support" style="color: #fff; text-decoration: none;">Contact Us</a>
+</nav>
+<div style="background: #ff6600; padding: 8px 16px; border-radius: 10px; display: flex; align-items: center; gap: 10px;">
+<span style="font-size: 18px;"></span>
+<div><div style="font-size: 10px; color: #ffe6d5;">Help & Support</div><strong style="font-size: 15px;">9906942182</strong></div>
+</div>
+</header>
+
+<section class="hero-section">
+<div style="max-width: 650px;">
+<div style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); display: inline-block; padding: 6px 12px; border-radius: 6px; font-size: 12px; margin-bottom: 15px; font-weight: bold;"> FAST • SECURE • RELIABLE</div>
+<h1 style="font-size: 48px; line-height: 1.15; margin: 0 0 15px 0;">
+Book Your<br><span style="color: #ff6600;">Train Journey</span><br>Instantly
+</h1>
+<p style="color: #ccc; margin-bottom: 25px; font-size: 15px;">Easy Booking • Confirmed Journey • Happy Travel</p>
+
+<div style="display: flex; gap: 15px;">
+<div style="background: rgba(11, 17, 32, 0.7); border: 1px solid rgba(255,255,255,0.15); padding: 12px 18px; border-radius: 10px; display: flex; align-items: center; gap: 12px; width: 220px;">
+<span style="font-size: 20px;"></span>
+<div><div style="font-size: 12px; font-weight: bold; color: #ff6600;">Happy Customers</div><div style="font-size: 11px; color: #aaa;">Trusted by travelers</div></div>
+</div>
+<div style="background: rgba(11, 17, 32, 0.7); border: 1px solid rgba(255,255,255,0.15); padding: 12px 18px; border-radius: 10px; display: flex; align-items: center; gap: 12px; width: 220px;">
+<span style="font-size: 20px;"></span>
+<div><div style="font-size: 12px; font-weight: bold; color: #ff6600;">100% Secure & Safe</div><div style="font-size: 11px; color: #aaa;">Your data is protected</div></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="booking-card" id="booking">
+<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
+<h2 style="margin: 0; font-size: 20px; display: flex; align-items: center; gap: 8px;"> BOOK <span style="color: #ff6600;">TICKET</span></h2>
+<span style="background: #e6f4ea; color: #137333; padding: 6px 14px; border-radius: 20px; font-size: 13px; font-weight: bold;"> WhatsApp Booking</span>
+</div>
+
+<div class="form-grid">
+<div class="form-group">
+<label>From Station</label>
+<div class="input-box">
+<span style="margin-right: 8px;"></span>
+<input type="text" placeholder="Enter departure station">
+</div>
+</div>
+<div style="display: flex; justify-content: center;">
+<button class="swap-btn" title="Swap Stations">⇄</button>
+</div>
+<div class="form-group">
+<label>To Station</label>
+<div class="input-box">
+<span style="margin-right: 8px;"></span>
+<input type="text" placeholder="Enter arrival station">
+</div>
+</div>
+<div class="form-group">
+<label>Journey Date</label>
+<div class="input-box">
+<span style="margin-right: 8px;"></span>
+<input type="date" value="2026-08-19">
+</div>
+</div>
+<div class="form-group">
+<label>Travel Class</label>
+<div class="input-box">
+<span style="margin-right: 8px;"></span>
+<select>
+<option>All Classes</option>
+<option>Sleeper (SL)</option>
+<option>3 AC (3A)</option>
+<option>2 AC (2A)</option>
+<option>1 AC (1A)</option>
+<option>Second Sitting (2S)</option>
+</select>
+</div>
+</div>
+</div>
+
+<div style="margin: 20px 0 10px 0; font-weight: bold; font-size: 13px; color: #444;">
+ PASSENGER DETAILS (Upto 6 Passengers)
+</div>
+
+<div class="passenger-grid">
+<div style="background: #f8f9fa; padding: 10px; border-radius: 8px; border: 1px solid #eee;">
+<div style="font-size: 11px; font-weight: bold; color: #ff6600; margin-bottom: 6px;"> Passenger 1</div>
+<div class="form-group" style="margin-bottom: 6px;"><input type="text" placeholder="Name" style="width:100%; padding:7px; border:1px solid #ddd; border-radius:5px;"></div>
+<div class="form-group" style="margin-bottom: 6px;"><input type="number" placeholder="Age" style="width:100%; padding:7px; border:1px solid #ddd; border-radius:5px;"></div>
+<div class="form-group"><select style="width:100%; padding:7px; border:1px solid #ddd; border-radius:5px; background:#fff;"><option>Gender</option><option>Male</option><option>Female</option><option>Other</option></select></div>
+</div>
+<div style="background: #f8f9fa; padding: 10px; border-radius: 8px; border: 1px solid #eee;">
+<div style="font-size: 11px; font-weight: bold; color: #ff6600; margin-bottom: 6px;"> Passenger 2</div>
+<div class="form-group" style="margin-bottom: 6px;"><input type="text" placeholder="Name" style="width:100%; padding:7px; border:1px solid #ddd; border-radius:5px;"></div>
+<div class="form-group" style="margin-bottom: 6px;"><input type="number" placeholder="Age" style="width:100%; padding:7px; border:1px solid #ddd; border-radius:5px;"></div>
+<div class="form-group"><select style="width:100%; padding:7px; border:1px solid #ddd; border-radius:5px; background:#fff;"><option>Gender</option><option>Male</option><option>Female</option><option>Other</option></select></div>
+</div>
+<div style="background: #f8f9fa; padding: 10px; border-radius: 8px; border: 1px solid #eee;">
+<div style="font-size: 11px; font-weight: bold; color: #ff6600; margin-bottom: 6px;"> Passenger 3</div>
+<div class="form-group" style="margin-bottom: 6px;"><input type="text" placeholder="Name" style="width:100%; padding:7px; border:1px solid #ddd; border-radius:5px;"></div>
+<div class="form-group" style="margin-bottom: 6px;"><input type="number" placeholder="Age" style="width:100%; padding:7px; border:1px solid #ddd; border-radius:5px;"></div>
+<div class="form-group"><select style="width:100%; padding:7px; border:1px solid #ddd; border-radius:5px; background:#fff;"><option>Gender</option><option>Male</option><option>Female</option><option>Other</option></select></div>
+</div>
+<div style="background: #f8f9fa; padding: 10px; border-radius: 8px; border: 1px solid #eee;">
+<div style="font-size: 11px; font-weight: bold; color: #ff6600; margin-bottom: 6px;"> Passenger 4</div>
+<div class="form-group" style="margin-bottom: 6px;"><input type="text" placeholder="Name" style="width:100%; padding:7px; border:1px solid #ddd; border-radius:5px;"></div>
+<div class="form-group" style="margin-bottom: 6px;"><input type="number" placeholder="Age" style="width:100%; padding:7px; border:1px solid #ddd; border-radius:5px;"></div>
+<div class="form-group"><select style="width:100%; padding:7px; border:1px solid #ddd; border-radius:5px; background:#fff;"><option>Gender</option><option>Male</option><option>Female</option><option>Other</option></select></div>
+</div>
+<div style="background: #f8f9fa; padding: 10px; border-radius: 8px; border: 1px solid #eee;">
+<div style="font-size: 11px; font-weight: bold; color: #ff6600; margin-bottom: 6px;"> Passenger 5</div>
+<div class="form-group" style="margin-bottom: 6px;"><input type="text" placeholder="Name" style="width:100%; padding:7px; border:1px solid #ddd; border-radius:5px;"></div>
+<div class="form-group" style="margin-bottom: 6px;"><input type="number" placeholder="Age" style="width:100%; padding:7px; border:1px solid #ddd; border-radius:5px;"></div>
+<div class="form-group"><select style="width:100%; padding:7px; border:1px solid #ddd; border-radius:5px; background:#fff;"><option>Gender</option><option>Male</option><option>Female</option><option>Other</option></select></div>
+</div>
+<div style="background: #f8f9fa; padding: 10px; border-radius: 8px; border: 1px solid #eee;">
+<div style="font-size: 11px; font-weight: bold; color: #ff6600; margin-bottom: 6px;"> Passenger 6</div>
+<div class="form-group" style="margin-bottom: 6px;"><input type="text" placeholder="Name" style="width:100%; padding:7px; border:1px solid #ddd; border-radius:5px;"></div>
+<div class="form-group" style="margin-bottom: 6px;"><input type="number" placeholder="Age" style="width:100%; padding:7px; border:1px solid #ddd; border-radius:5px;"></div>
+<div class="form-group"><select style="width:100%; padding:7px; border:1px solid #ddd; border-radius:5px; background:#fff;"><option>Gender</option><option>Male</option><option>Female</option><option>Other</option></select></div>
+</div>
+</div>
+
+<div style="display: flex; gap: 20px; align-items: center; margin-bottom: 20px; flex-wrap: wrap;">
+<div style="flex: 1; min-width: 220px;" class="form-group">
+<label>Class Type</label>
+<select style="width:100%; padding:10px; border:1px solid #ddd; border-radius:6px; background:#fff;">
+<option>GENERAL</option>
+<option>Tatkal</option>
+<option>Premium Tatkal</option>
+<option>Ladies Quota</option>
+<option>Senior Citizen</option>
+</select>
+</div>
+<div style="flex: 2; display: flex; gap: 15px; font-size: 12px; color: #555; align-items: center; flex-wrap: wrap; padding-top: 15px;">
+<label style="cursor: pointer;"><input type="checkbox"> Person With Disability Concession</label>
+<label style="cursor: pointer;"><input type="checkbox"> Flexible With Date</label>
+<label style="cursor: pointer;"><input type="checkbox"> Railway Pass Concession</label>
+</div>
+</div>
+
+<div style="margin-bottom: 25px;" class="form-group">
+<label>Train Number & Name (Optional)</label>
+<input type="text" placeholder="e.g. 22439 Vande Bharat Express" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px;">
+</div>
+
+<div>
+<button class="submit-btn"> Send Booking Request via WhatsApp</button>
+</div>
+</section>
+
+<footer>
+<div>© 2026 Bookkardo. All Rights Reserved.</div>
+<div style="margin: 10px 0;">Stay Connected</div>
+<div class="social-icons">
+<a href="#" class="social-icon" style="background: #3b5998;">f</a>
+<a href="#" class="social-icon" style="background: #e1306c;"></a>
+<a href="#" class="social-icon" style="background: #1da1f2;"></a>
+<a href="#" class="social-icon" style="background: #ff0000;"></a>
+</div>
+</footer>
+
+</body>
+</html>
